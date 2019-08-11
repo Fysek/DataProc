@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1551070595 source:c:\coursera\imageproc\uiuc\hslapixel.cpp
+	<cmath>
+	<iostream>
+	"HSLAPixel.h"
+
+1551070595 c:\coursera\imageproc\uiuc\hslapixel.h
+	<iostream>
+	<sstream>
+
+1551070595 source:c:\coursera\imageproc\uiuc\lodepng\lodepng.cpp
+	"lodepng.h"
+	<limits.h>
+	<stdio.h>
+	<stdlib.h>
+
+1551070595 c:\coursera\imageproc\uiuc\lodepng\lodepng.h
+	<string.h>
+	<vector>
+	<string>
+	"lodepng.h"
+	<iostream>
+	"lodepng.h"
+
