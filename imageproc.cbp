@@ -12,6 +12,7 @@
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
+					<Add option="-std=c++11" />
 					<Add option="-g" />
 				</Compiler>
 			</Target>
@@ -32,7 +33,16 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="ImageTransform.cpp" />
+		<Unit filename="ImageTransform.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="uiuc/HSLAPixel.cpp" />
+		<Unit filename="uiuc/HSLAPixel.h" />
+		<Unit filename="uiuc/PNG.cpp" />
+		<Unit filename="uiuc/PNG.h" />
+		<Unit filename="uiuc/RGB_HSL.h" />
+		<Unit filename="uiuc/lodepng/lodepng.cpp" />
+		<Unit filename="uiuc/lodepng/lodepng.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

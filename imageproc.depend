@@ -22,3 +22,60 @@
 	<iostream>
 	"lodepng.h"
 
+1565601252 source:c:\repo\git_repo\imagproc\uiuc\hslapixel.cpp
+	<cmath>
+	<iostream>
+	"HSLAPixel.h"
+
+1565602042 c:\repo\git_repo\imagproc\uiuc\hslapixel.h
+	<iostream>
+	<sstream>
+
+1565601252 source:c:\repo\git_repo\imagproc\uiuc\lodepng\lodepng.cpp
+	"lodepng.h"
+	<limits.h>
+	<stdio.h>
+	<stdlib.h>
+
+1565601252 c:\repo\git_repo\imagproc\uiuc\lodepng\lodepng.h
+	<string.h>
+	<vector>
+	<string>
+	"lodepng.h"
+	<iostream>
+	"lodepng.h"
+
+1565615213 source:c:\repo\git_repo\imagproc\imagetransform.cpp
+	<iostream>
+	<cmath>
+	<cstdlib>
+	"uiuc/PNG.h"
+	"uiuc/HSLAPixel.h"
+	"ImageTransform.h"
+
+1565601252 c:\repo\git_repo\imagproc\uiuc\png.h
+	<string>
+	<vector>
+	"HSLAPixel.h"
+
+1565601252 c:\repo\git_repo\imagproc\imagetransform.h
+	"uiuc/PNG.h"
+
+1565601252 source:c:\repo\git_repo\imagproc\main.cpp
+	"ImageTransform.h"
+	"uiuc/PNG.h"
+
+1565601252 source:c:\repo\git_repo\imagproc\uiuc\png.cpp
+	<iostream>
+	<string>
+	<algorithm>
+	<functional>
+	<cassert>
+	"lodepng/lodepng.h"
+	"HSLAPixel.h"
+	"PNG.h"
+	"RGB_HSL.h"
+
+1565601252 c:\repo\git_repo\imagproc\uiuc\rgb_hsl.h
+	<cmath>
+
