@@ -86,23 +86,19 @@
 // properly destroyed first. There is no need to return a value because the
 // tree is edited in-place by reference.
 static void treeFactory(GenericTree<int>& tree) {
-
-  //      *****************************************************
-  //                           EXERCISE 1
-  //    TODO: Your work here! You should edit this function body!
-  //      *****************************************************
-
-  // Edit the function body only. You should leave the function header alone.
-  // Build the contents of tree so that it matches the diagram above
-  // when you print it out. The main() function runs that test for you.
-
-  // ...
-
+  using TreeNode = typename GenericTree<int>::TreeNode;
+  tree.clear();
+  TreeNode* rootPtr = new TreeNode(); 
+  TreeNode* rootLeftPtr = new TreeNode();
+  TreeNode* rootLeftLeftPtr = new TreeNode(); 
+  rootPtr = tree.createRoot(4);
+  rootLeftPtr = rootPtr->addChild(8);
+  rootLeftLeftPtr = rootLeftPtr->addChild(16);
+  rootLeftLeftPtr->addChild(42);
+  rootLeftPtr->addChild(23);
+  rootPtr->addChild(15);
 }
 
-// treeFactoryTest: This function demonstrates the execution of treeFactory
-// and displays a preview of the results in the main function.
-// (You do NOT need to edit this function.)
 static void treeFactoryTest() {
   std::cout << std::endl;
   std::cout << "------------------------------" << std::endl;
