@@ -296,9 +296,6 @@ int countNullChildrenIterative(N* subtreeRoot) {
 // which should then be returned.
 template <typename T>
 std::vector<T> traverseLevels(GenericTree<T>& tree) {
-
-  // This defines a type alias for the appropriate TreeNode dependent type.
-  // This might be convenient.
   using TreeNode = typename GenericTree<T>::TreeNode;
 
   // Now you can refer to a pointer to a TreeNode in this function like this.
@@ -306,10 +303,10 @@ std::vector<T> traverseLevels(GenericTree<T>& tree) {
 
   // This is the results vector you need to fill.
   std::vector<T> results;
-
+  
   auto rootNodePtr = tree.getRootPtr();
   if (!rootNodePtr) return results;
-
+  
   //      *****************************************************
   //                           EXERCISE 2
   //    TODO: Your work here! You should edit this function body!
@@ -321,6 +318,36 @@ std::vector<T> traverseLevels(GenericTree<T>& tree) {
   // with the .push_back() member function.
 
   // ...
+  
+  auto rootData = rootNodePtr->data;
+  results.push_back(rootData); 
+  
+  std::vector<T> vectorResults;
+  
+  
+  auto childrenVector = rootNodePtr->childrenPtrs;
+  std::vector< std::vector <TreeNode*>> childrenVectorPtrs;
+  childrenVectorPtrs.push_back(childrenVector);//wpychamy wektor BDJK
+ 
+  while(!childrenVectorPtrs.empty()){
+    childrenVector = childrenVectorPtrs.back();
+    childrenVectorPtrs.pop_back();
+    
+    while(!childrenVector.empty()){
+        auto childNode = childrenVector.back();
+        vectorResults.push_back(childNode->data);
+        childrenVectorPtrs.push_back(childNode->childrenPtrs);
+        childrenVector.pop_back();
+    }
+    
+    while(!vectorResults.empty()){
+      auto vectorData = vectorResults.back();
+      results.push_back(vectorData);
+      vectorResults.pop_back();
+    }
+    
+  } 
+   
 
   return results;
 }
