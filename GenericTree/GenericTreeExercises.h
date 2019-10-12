@@ -294,60 +294,32 @@ int countNullChildrenIterative(N* subtreeRoot) {
 // traverseLevels: Performs a level-order traversal of the input tree
 // and records copies of the data found, in order, in a std::vector,
 // which should then be returned.
+
 template <typename T>
 std::vector<T> traverseLevels(GenericTree<T>& tree) {
   using TreeNode = typename GenericTree<T>::TreeNode;
 
-  // Now you can refer to a pointer to a TreeNode in this function like this.
-  // TreeNode* someTreeNodePointer = nullptr;
-
-  // This is the results vector you need to fill.
   std::vector<T> results;
   
   auto rootNodePtr = tree.getRootPtr();
   if (!rootNodePtr) return results;
-  
-  //      *****************************************************
-  //                           EXERCISE 2
-  //    TODO: Your work here! You should edit this function body!
-  //      *****************************************************
 
-  // Perform a level-order traversal and record the data of the nodes in
-  // the results vector. They should be placed in the vector in level order.
-  // Remember that you can add a copy of an item to the back of a std::vector
-  // with the .push_back() member function.
+  std::queue<TreeNode*> nodesToExplore;
 
-  // ...
-  
-  auto rootData = rootNodePtr->data;
-  results.push_back(rootData); 
-  
-  std::vector<T> vectorResults;
-  
-  
-  auto childrenVector = rootNodePtr->childrenPtrs;
-  std::vector< std::vector <TreeNode*>> childrenVectorPtrs;
-  childrenVectorPtrs.push_back(childrenVector);//wpychamy wektor BDJK
- 
-  while(!childrenVectorPtrs.empty()){
-    childrenVector = childrenVectorPtrs.back();
-    childrenVectorPtrs.pop_back();
-    
-    while(!childrenVector.empty()){
-        auto childNode = childrenVector.back();
-        vectorResults.push_back(childNode->data);
-        childrenVectorPtrs.push_back(childNode->childrenPtrs);
-        childrenVector.pop_back();
+  nodesToExplore.push(rootNodePtr);
+
+  while (!nodesToExplore.empty()) {
+
+    auto topNode = nodesToExplore.front();
+    auto rootData = topNode->data;
+    results.push_back(rootData); 
+    nodesToExplore.pop();
+
+    for (auto childPtr : topNode->childrenPtrs) {
+      nodesToExplore.push(childPtr);
     }
-    
-    while(!vectorResults.empty()){
-      auto vectorData = vectorResults.back();
-      results.push_back(vectorData);
-      vectorResults.pop_back();
-    }
-    
-  } 
-   
+
+  }
 
   return results;
 }
